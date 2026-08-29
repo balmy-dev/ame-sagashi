@@ -1,0 +1,508 @@
+body {
+
+    margin: 0;
+
+    background: #f5efe5;
+
+    font-family: sans-serif;
+
+    color: #4a4038;
+
+}
+
+
+.game {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    text-align: center;
+
+}
+
+
+h1 {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+}
+
+
+#message {
+
+    line-height: 1.8;
+
+}
+
+
+#count {
+
+    font-weight: bold;
+
+    margin: 20px;
+
+}
+
+
+/* =========================
+   ゲーム画面
+========================= */
+
+#game-area {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    margin-top: 20px;
+
+    background-image:
+        url("images/background.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border: 5px solid #6f5945;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================
+   モチーフ
+========================= */
+
+.motif {
+    position: absolute;
+    z-index: 5;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: transform 0.15s ease;
+}
+
+
+.motif:hover {
+    transform: scale(1.12);
+}
+
+.motif:focus {
+    outline: none;
+}
+
+
+.motif img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* ぬいぐるみ */
+
+.teddy {
+
+    left: 3%;
+
+    bottom: 20%;
+
+    width: 15%;
+
+    height: 20%;
+
+}
+
+
+/* 人形 */
+
+.doll {
+
+    right: 25%;
+
+    bottom: 10%;
+
+    width: 13%;
+
+    height: 18%;
+
+}
+
+
+/* =========================
+   飴
+========================= */
+
+.candy {
+
+    position: absolute;
+
+    z-index: 10;
+
+    width: 4%;
+
+    height: 8%;
+
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.candy img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+.candy:hover {
+
+    transform: scale(1.4);
+
+}
+
+
+/* 飴の位置 */
+
+.candy1 {
+
+    left: 27%;
+
+    top: 28%;
+
+}
+
+
+.candy2 {
+
+    left: 55%;
+
+    top: 67%;
+
+}
+
+
+.candy3 {
+
+    right: 14%;
+
+    top: 31%;
+
+}
+
+
+/* =========================
+   飴発見アニメーション
+========================= */
+
+.candy.found {
+
+    animation:
+        foundCandy
+        0.4s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes foundCandy {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.7)
+            rotate(10deg);
+
+    }
+
+    100% {
+
+        transform: scale(0);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   影片みか＋セリフ
+========================= */
+
+.character-area {
+
+    position: relative;
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+/* セリフ */
+
+#reaction {
+
+    width: 45%;
+
+    min-height: 50px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* 影片みか */
+
+.mika {
+
+    width: 30%;
+
+    max-height: 300px;
+
+    object-fit: contain;
+
+    object-position: bottom;
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+#clear-screen {
+
+    padding: 30px;
+
+}
+
+
+.clear {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+}
+
+
+.clear-image {
+
+    width: 300px;
+
+    max-width: 80%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================
+   非表示
+========================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+#novel-button,
+
+#again {
+
+    font-size: 18px;
+
+    padding: 10px 20px;
+
+    margin: 5px;
+
+    background: white;
+
+    border: 2px solid #8d7054;
+
+    border-radius: 5px;
+
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 600px) {
+
+
+    .game {
+
+        width: 94%;
+
+        margin: 20px auto;
+
+    }
+
+
+    h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    #game-area {
+
+        aspect-ratio: 4 / 3;
+
+        border-width: 3px;
+
+    }
+
+
+    .character-area {
+
+        min-height: 220px;
+
+        gap: 10px;
+
+    }
+
+
+    #reaction {
+
+        width: 50%;
+
+        font-size: 16px;
+
+    }
+
+
+    .mika {
+
+        width: 40%;
+
+        max-height: 240px;
+
+    }
+
+
+    .candy {
+
+        width: 6%;
+
+        height: 9%;
+
+    }
+
+
+    .teddy {
+
+        width: 20%;
+
+        height: 22%;
+
+    }
+
+
+    .doll {
+
+        width: 18%;
+
+        height: 20%;
+
+    }
+
+
+}
+
+.clear-image {
+
+    display: block;
+
+    width: 300px;
+
+    max-width: 80%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+
+    margin: 0 auto 20px;
+
+}

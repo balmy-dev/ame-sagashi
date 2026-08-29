@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>あめちゃんさがし</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<main class="game">
+
+
+    <!-- =========================
+         タイトル画面
+    ========================== -->
+
+    <div id="title-screen">
+
+        <h1>あめちゃんさがし</h1>
+
+        <p>
+            影片くんがあめちゃんを隠してしまったみたいです。<br>
+            3つあるから、探してみよう！
+        </p>
+
+        <button id="start-button">
+            ゲームをはじめる
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         ゲーム本体
+    ========================== -->
+
+    <div id="game-screen" class="hidden">
+
+
+        <h1>あめちゃんさがし</h1>
+
+
+        <p id="message">
+            影片くんがあめちゃんを隠してしまったみたいです。<br>
+            3つあるから、探してみよう！
+        </p>
+
+
+        <p id="count">
+            見つけた飴：0 / 3
+        </p>
+
+
+        <!-- =========================
+             ゲーム画面
+        ========================== -->
+
+        <div id="game-area">
+
+
+            <!-- ぬいぐるみ -->
+
+            <button class="motif teddy wrong">
+
+                <img
+                    src="images/teddy.png"
+                    alt="ぬいぐるみ"
+                >
+
+            </button>
+
+
+            <!-- 人形 -->
+
+            <button class="motif doll wrong">
+
+                <img
+                    src="images/doll.png"
+                    alt="人形"
+                >
+
+            </button>
+
+
+            <!-- 飴① -->
+
+            <button class="candy candy1">
+
+                <img
+                    src="images/candy.png"
+                    alt="飴"
+                >
+
+            </button>
+
+
+            <!-- 飴② -->
+
+            <button class="candy candy2">
+
+                <img
+                    src="images/candy.png"
+                    alt="飴"
+                >
+
+            </button>
+
+
+            <!-- 飴③ -->
+
+            <button class="candy candy3">
+
+                <img
+                    src="images/candy.png"
+                    alt="飴"
+                >
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =========================
+             影片みか＋セリフ
+        ========================== -->
+
+        <div class="character-area">
+
+
+            <div id="reaction">
+                あめちゃん探してみてなぁ～
+            </div>
+
+
+            <img
+                src="images/mika.png"
+                alt="影片みか"
+                class="mika"
+            >
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+     クリア画面
+========================== -->
+
+<div id="clear-screen" class="hidden">
+
+
+    <img
+        src="images/clear.png"
+        alt="CLEAR"
+        class="clear-image"
+    >
+
+
+    <p class="clear">
+        CLEAR!
+    </p>
+
+
+    <p>
+        んふふ、一緒に食べたらもっとおいしいなぁ
+    </p>
+
+
+    <p>
+        夢小説が解禁されました！
+    </p>
+
+
+    <button id="novel-button">
+        夢小説を読む
+    </button>
+
+
+    <br>
+
+
+    <button id="again">
+        もう一度遊ぶ
+    </button>
+
+
+</div>
+
+    <!-- =========================
+         BGM
+    ========================== -->
+
+    <audio
+        id="bgm"
+        src="music/bgm.wav"
+        loop
+    ></audio>
+
+    <!-- =========================
+         BGMクレジット
+    ========================== -->
+
+    <p class="music-credit">
+        BGM：
+        <a
+            href="https://noiselessworld.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            騒音のない世界
+        </a>
+    </p>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
